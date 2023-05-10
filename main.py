@@ -1,4 +1,4 @@
-from tensorflow import keras
+#from tensorflow import keras tensorflow==2.12.0
 from flask import Flask, render_template, request
 import numpy as np
 import os
