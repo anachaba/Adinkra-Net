@@ -18,9 +18,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    response = make_response(render_template('index.html'))
-    response.headers['ngrok-skip-browser-warning'] = 'true'
-    return response
+    
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
