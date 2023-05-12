@@ -1,0 +1,96 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  img {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+  }
+  
+  /* Use a more modern and readable font stack */
+  body {
+    font-family: "Londrina Solid","Roboto", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  /* Use a subtle color palette for the background and text */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6e4dd;
+    padding: 2rem;
+  }
+  @font-face {
+    font-family: 'Londrina Solid';
+    src: url('LondrinaSolid-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  h1 {
+    font-family: "Londrina Solid", Arial, sans-serif;
+    font-size: 5rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1f6566;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #3e3e3e;
+  }
+  
+  /* Style the button to look more like a button */
+  .button-container {
+    margin-top: 2rem;
+  }
+  .gif {
+    margin-bottom: 30%;
+    width: 15%;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    background-color: #060c08;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  label {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    background-color: #060c08;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #0b140e;
+  }
+  

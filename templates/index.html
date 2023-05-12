@@ -1,16 +1,63 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AdinkraNet is your guide to discovering the rich meanings behind ancient adinkra symbols."
+    />
     <title>AdinkraNet</title>
-   
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index_style.css') }}">
-</head>
-<body>
-    <h1>AdinkraNET</h1>
-    <p>Upload adinkra symbol and find info about it .</p>
-    <form action="/predict" method="post" enctype="multipart/form-data">
-        <input type="file" id="image" name="image" accept="image/*" required>
-        <label for="image">Choose an image</label>
-        <button type="submit">Predict</button>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    
+    <script>
+        function showLoadingAnimation() {
+            var loadingAnimation = document.getElementById("loading-animation");
+            var loadingText = document.getElementById("loading-text");
+            loadingAnimation.style.display = "block";
+            loadingText.style.display = "block";
+        }
+        function showAll(){
+            
+            document.getElementById('image').click();
+            showLoadingAnimation();
+
+        }
+        function takePictureAndSubmitForm() {
+            var form = document.getElementById("predict-form");
+            var image = document.getElementById("image");
+            image.capture = "camera";
+            image.accept = "image/*";
+            image.required = true;
+            image.addEventListener("change", function() {
+                form.submit();
+            });
+        }
+    </script>
+  </head>
+  <body onload="takePictureAndSubmitForm()">
+    <div class="container">
+      <h1>AdinkraNet</h1>
+      <p>Discover the rich meanings behind ancient adinkra symbols.</p>
+
+      
+      <form id="predict-form" action="/predict" method="post" enctype="multipart/form-data" onsubmit="showLoadingAnimation()">
+        <input type="file" id="image" name="image" style="display:none;">
+        
+        <div class="button-container">
+
+        <label for="image" onclick="showAll()">Start</label>
+        
+      </div>
+
+        <button type="submit" style="display:none;">Predict</button>
     </form>
-</body>
+    <div id="loading-animation" style="display:none;"><img class="gif" src="{{ url_for('static', filename='loading.gif') }}" alt="Loading..."></div>
+    <p>
+    <div id="loading-text" style="display:none;"><p>Please Wait</p></div>
+      
+    </div>
+    <img src="{{ url_for('static', filename='img.png') }}" alt="symbol" />
+  </body>
 </html>

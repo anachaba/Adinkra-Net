@@ -1,6 +1,6 @@
-<html>
+<!--<html>
 <head>
-    <title>Image Classification App</title>
+    <title>AdinkraNet</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='predict_style.css') }}">
 </head>
 <body>
@@ -10,4 +10,31 @@
     <br>
     <a href="/">Go back</a>
 </body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AdinkraNet is your guide to discovering the rich meanings behind ancient adinkra symbols."
+    />
+    <title>AdinkraNet</title>
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>AdinkraNet</h1>
+      <p>Adinkra Symbol Name is : </p><br>
+      <p><a href="https://www.google.com/search?q={{class_name}}">{{ class_name }}</a></p>
+      <div class="button-container">
+        <button onclick="window.location.href='/';">Again</button>
+      </div>
+    </div>
+    <img src="{{ url_for('static', filename='img.png')}}" alt="symbol" />
+  </body>
 </html>
